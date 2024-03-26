@@ -1,15 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // Import your page components
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
+import Header from './Header';
 
 function App() {
   return (
     <Router>
+
       <div>
+      <Header />
         {/* Navigation Links */}
         <nav>
           <ul>
@@ -24,12 +29,13 @@ function App() {
             </li>
           </ul>
         </nav>
-
+        
         {/* Route Configuration */}
         <Routes>
           <Route path="/" element={<HomePage />} exact />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+        
         </Routes>
       </div>
     </Router>
