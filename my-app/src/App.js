@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import Footer from './Footer';
+import Head from './Head';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             </li>
           </ul>
         </nav>
+        <Head />
 
         {/* Route Configuration */}
         <Routes>
