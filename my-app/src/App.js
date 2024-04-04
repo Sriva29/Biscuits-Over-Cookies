@@ -7,6 +7,7 @@ import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
+import ProfilePage from './ProfilePage';
 import Footer from './Footer';
 import Head from './Head';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<HomePage />} exact />
           <Route path="/login" element={<LoginPage />} /> 
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
