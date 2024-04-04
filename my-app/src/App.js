@@ -9,7 +9,9 @@ import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import Footer from './Footer';
 import Head from './Head';
-
+import Questions from './Questions';
+import Confirmation from './Confirmation';
+import ErrorPage from './ErrorPage';
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/questionnare" element={<Questions />} />
+          <Route path="/businessplan01" element={<Confirmation />} />
+          <Route path="/error" element={<ErrorPage />} />
         </Routes>
         {/* <LoginPage /> */}
         <Footer />
