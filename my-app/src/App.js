@@ -1,43 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Import your page components
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
-import Header from './Header';
+import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
+import Footer from './Footer';
+import Head from './Head';
+
 
 function App() {
   return (
     <Router>
-
       <div>
-      <Header />
         {/* Navigation Links */}
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-        
+        <Head />
+
         {/* Route Configuration */}
         <Routes>
-          <Route path="/" element={<HomePage />} exact />
+          <Route path="/home" element={<HomePage />} exact />
+          <Route path="/login" element={<LoginPage />} /> 
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-        
         </Routes>
+        {/* <LoginPage /> */}
+        <Footer />
       </div>
+      
     </Router>
   );
 }
