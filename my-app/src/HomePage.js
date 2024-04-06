@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap'; //Removed ProgressBar
+// src/HomePage.js
+import React from 'react';
 
 function HomePage() {
   // This state holds the search term.
@@ -34,46 +34,8 @@ function HomePage() {
 
   return (
     <div>
-      <Container fluid>
-        <Row>
-          <Col md={7} className="d-flex align-items-center justify-content-center">
-            <div>
-              <h1>Welcome to TradeInsight</h1>
-              <p>
-                Your essential partner for import and export success in Canada.
-                Generate a winning business plan and unlock the potential of
-                international trade. Just enter a product you want to import or
-                export and get started.
-              </p>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter product"
-                    value={searchTerm}
-                    onChange={handleInputChange}
-                  />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Go
-                </Button>
-              </Form>
-            </div>
-          </Col>
-          <Col md={5} className="p-0">
-            <img
-              src="https://imgur.com/kF0TLDQ.png"
-              alt="Login"
-              className="img-fluid float-start"
-            />
-          </Col>
-        </Row>
-      </Container>
-      {/* <ProgressBar>
-        <ProgressBar variant="success" now={33.33} key={1} />
-        <ProgressBar variant="info" now={33.33} key={2} />
-        <ProgressBar variant="info" now={33.33} key={3} />
-      </ProgressBar> */}
+      <h1>Home Page</h1>
+      <p>Welcome to our site!</p>
     </div>
   );
 }
