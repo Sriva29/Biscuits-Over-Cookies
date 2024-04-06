@@ -1,0 +1,157 @@
+[
+    {
+      "country": "Vietnam",
+      "commodity": "Coffee",
+      "year": 2020,
+      "quantity": 4653,
+      "value": 17350
+    },
+    {
+      "country": "Uganda",
+      "commodity": "Coffee",
+      "year": 2020,
+      "quantity": 2993,
+      "value": 18159
+    },
+    {
+      "country": "Brazil",
+      "commodity": "Coffee",
+      "year": 2020,
+      "quantity": 5876,
+      "value": 49477
+    },
+    {
+      "country": "Mexico",
+      "commodity": "Coffee",
+      "year": 2015,
+      "quantity": 4443,
+      "value": 24864
+    },
+    {
+      "country": "Brazil",
+      "commodity": "Coffee",
+      "year": 2017,
+      "quantity": 9053,
+      "value": 23661
+    },
+    {
+      "country": "Guatemala",
+      "commodity": "Coffee",
+      "year": 2018,
+      "quantity": 8675,
+      "value": 39177
+    },
+    {
+      "country": "Ethiopia",
+      "commodity": "Coffee",
+      "year": 2023,
+      "quantity": 6942,
+      "value": 47575
+    },
+    {
+      "country": "Colombia",
+      "commodity": "Coffee",
+      "year": 2015,
+      "quantity": 6080,
+      "value": 19933
+    },
+    {
+      "country": "Mexico",
+      "commodity": "Coffee",
+      "year": 2016,
+      "quantity": 1578,
+      "value": 33521
+    },
+    {
+      "country": "Guatemala",
+      "commodity": "Coffee",
+      "year": 2022,
+      "quantity": 4874,
+      "value": 12145
+    },
+    {
+      "country": "Vietnam",
+      "commodity": "Coffee",
+      "year": 2016,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Colombia",
+      "commodity": "Coffee",
+      "year": 2017,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Ethiopia",
+      "commodity": "Coffee",
+      "year": 2018,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Vietnam",
+      "commodity": "Coffee",
+      "year": 2019,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Colombia",
+      "commodity": "Coffee",
+      "year": 2020,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Ethiopia",
+      "commodity": "Coffee",
+      "year": 2021,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Vietnam",
+      "commodity": "Coffee",
+      "year": 2022,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Colombia",
+      "commodity": "Coffee",
+      "year": 2023,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Ethiopia",
+      "commodity": "Coffee",
+      "year": 2015,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Vietnam",
+      "commodity": "Coffee",
+      "year": 2017,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Colombia",
+      "commodity": "Coffee",
+      "year": 2016,
+      "quantity": 2924,
+      "value": 23456
+    },
+    {
+      "country": "Ethiopia",
+        "commodity": "Coffee",
+        "year": 2016,
+        "quantity": 2924,
+        "value": 23456
+    }
+]
+  
