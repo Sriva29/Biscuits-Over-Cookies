@@ -22,45 +22,51 @@ const BusinessPlanPage = () => {
     };
 
     fetchAndAnalyzeData();
-  }, [searchTerm]); // Rerun the effect if searchTerm changes
+  }, [searchTerm]); //this re-runs when searchTerm changes
 
-  // Analyzes the fetched data to find the best option based on a criterion
   const analyzeData = (data) => {
-    // Simple analysis: find the option with the highest quantity
+    // This is the simplest analysis. It takes the data from the api and finds the country that exports the largest quantity of the commodity
     return data.reduce((prev, current) => (prev.quantity > current.quantity) ? prev : current);
   };
 
   const generateBusinessPlan = async (bestOption) => {
-    const prompt = `Generate a business plan for importing ${bestOption.commodity} from ${bestOption.country}, focusing on the quantity of ${bestOption.quantity} and an investment of ${bestOption.value}.`;
-
+    const messages = [
+      {
+        role: 'system',
+        content: 'You are an AI assistant with over 40 years of business experience. You are a business plan creating machine that creates accurate and concise business plans. Remember to just generate the business plan and not talk to the user.'
+      },
+      {
+        role: 'user',
+        content: `I want to start an import business. I want to import ${bestOption.product} from ${bestOption.country}. Can you help me create a business plan?`
+      },
+    ];
+  
     try {
-      const response = await axios.post('https://api.openai.com/v4/completions', {
-        model: 'text-davinci-003', // Update to the latest model available
-        prompt: prompt,
-        temperature: 0.7,
-        max_tokens: 1024,
-        top_p: 1.0,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-      }, {
-        headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`
-        }
+      const response = await axios.post('http://localhost:5000/generate-plan', {
+        messages,
+        model: 'gpt-3.5-turbo', 
       });
-
+  
       if (response.data.choices && response.data.choices.length > 0) {
-        setBusinessPlan(response.data.choices[0].text);
+        setBusinessPlan(response.data.choices[0].message.content); 
       }
     } catch (error) {
       console.error('Error generating business plan:', error);
       setBusinessPlan('Failed to generate business plan.');
     }
   };
-
+  
   return (
     <div>
-      <h1>Business Plan</h1>
-      {businessPlan ? <p>{businessPlan}</p> : <p>Loading...</p>}
+      <h1>Import Business Plan</h1>
+      <div id="businessPlanContent" style={{ padding: "20px", backgroundColor: "#f5f5f5", borderRadius: "8px", marginBottom: "20px" }}>
+        {businessPlan ? (
+          <div dangerouslySetInnerHTML={{ __html: businessPlan }} />
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+      <button onClick={downloadPDF}>Download as PDF</button>
     </div>
   );
 };

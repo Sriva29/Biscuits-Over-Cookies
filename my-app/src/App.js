@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import BusinessPlanPage from './pages/BusinessPlanPage';
 
-// Import your page components
+
+// page imports
 import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import ContactPage from './ContactPage';
 import Footer from './Footer';
 import Head from './Head';
+import BusinessPlanPage from './BusinessPlanPage';
 
 function App() {
   return (
