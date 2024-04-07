@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BusinessPlanPage from './pages/BusinessPlanPage';
 
 // Import your page components
 import HomePage from './HomePage';
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomePage />} exact />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/business-plan" element={<BusinessPlanPage />} />
         </Routes>
         <Footer />
       </div>

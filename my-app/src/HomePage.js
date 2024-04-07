@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap'; //Removed ProgressBar
 
 function HomePage() {
-  // This state holds the search term.
   const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
 
   // Handler for changing the input field
   const handleInputChange = (event) => {
@@ -20,16 +21,8 @@ function HomePage() {
       return;
     }
 
-  // Make the API call with the search term, specifying the full URL
-  fetch(`http://localhost:5000/api/trade-data/${encodeURIComponent(searchTerm)}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data); // Process the data
-    })
-    .catch((error) => {
-      console.error('Error fetching data:', error);
-    });
-
+    //opening business plan page
+    navigate('/business-plan', {state:{searchTerm}});
   };
 
   return (
