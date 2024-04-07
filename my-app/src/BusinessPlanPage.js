@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { PDFViewer, BlobProvider} from '@react-pdf/renderer';
+import BusinessPlanPDF from './BusinessPlanPDF';
+
 
 const BusinessPlanPage = () => {
   const [businessPlan, setBusinessPlan] = useState('');
@@ -58,15 +61,22 @@ const BusinessPlanPage = () => {
   
   return (
     <div>
-      <h1>Import Business Plan</h1>
-      <div id="businessPlanContent" style={{ padding: "20px", backgroundColor: "#f5f5f5", borderRadius: "8px", marginBottom: "20px" }}>
-        {businessPlan ? (
-          <div dangerouslySetInnerHTML={{ __html: businessPlan }} />
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-      <button onClick={downloadPDF}>Download as PDF</button>
+      <h1>View Business Plan</h1>
+      <PDFViewer style={{ width: '100%', height: '90vh' }}>
+        <BusinessPlanPDF businessPlan={businessPlan} />
+      </PDFViewer>
+      <BlobProvider document={<BusinessPlanPDF businessPlan={businessPlan} />}>
+    {({ blob, url, loading, error }) => {
+      if (loading) {
+        return <div>Loading document...</div>;
+      }
+      if (error) {
+        console.error(error);
+        return <div>Failed to generate document</div>;
+      }
+      return <a href={url} download="BusinessPlan.pdf">Download Business Plan</a>;
+    }}
+  </BlobProvider>
     </div>
   );
 };
