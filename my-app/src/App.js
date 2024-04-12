@@ -9,6 +9,7 @@ import ContactPage from './ContactPage';
 import Footer from './Footer';
 import Head from './Head';
 import BusinessPlanPage from './BusinessPlanPage';
+import SignupPage from './SignupPage';  
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/business-plan" element={<BusinessPlanPage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
         <Footer />
       </div>
