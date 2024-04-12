@@ -36,7 +36,7 @@ const SignupPage = () => {
         </Col>
         <Col md={7} className="d-flex align-items-center justify-content-center">
           <div style={{ maxWidth: '300px' }}>
-            <Button variant="secondary" className="mb-3">Back</Button>
+            {/* <Button variant="secondary" className="mb-3">Back</Button> */}
 
             <div className="text-left mb-4">
               <h1>Register</h1>

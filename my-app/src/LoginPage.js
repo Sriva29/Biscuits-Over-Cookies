@@ -13,7 +13,7 @@ const LoginPage = () => {
         </Col>
         <Col md={7} className="d-flex align-items-center justify-content-center">
           <div style={{ maxWidth: '300px' }}> 
-            <Button variant="secondary" className="mb-3">Back</Button>
+            {/* <Button variant="secondary" className="mb-3">Back</Button> */}
 
             {/* Login */}
             <div className="text-left mb-4">
@@ -32,12 +32,12 @@ const LoginPage = () => {
                 <Form.Control type="text" placeholder="Password" />
               </FloatingLabel>
 
-              <Form.Check
+              {/* <Form.Check
               type="checkbox"
               id="rememberMeCheckbox"
               label="Remember Me"
               className="mb-3"
-            />
+            /> */}
 
               <Button variant="primary" type="submit" style={{ width: '100%', backgroundColor: '#008080' }}>Login</Button>
               <div className="mt-3 text-center">
