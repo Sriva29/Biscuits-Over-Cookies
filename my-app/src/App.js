@@ -10,6 +10,7 @@ import Footer from './Footer';
 import Head from './Head';
 import BusinessPlanPage from './BusinessPlanPage';
 import SignupPage from './SignupPage';  
+import ProfilePage from './ProfilePage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/business-plan" element={<BusinessPlanPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
         <Footer />
       </div>
