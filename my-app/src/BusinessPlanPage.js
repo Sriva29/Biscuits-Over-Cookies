@@ -40,7 +40,7 @@ const BusinessPlanPage = () => {
       },
       {
         role: 'user',
-        content: `I want to start an import business. I want to import ${bestOption.product} from ${bestOption.country}. Can you help me create a business plan?`
+        content: `I want to start an import business. I want to import ${bestOption.commodity} from ${bestOption.country}. Can you help me create a business plan?`
       },
     ];
   
