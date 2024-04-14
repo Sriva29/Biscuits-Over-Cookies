@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
 
 
 // page imports
@@ -15,6 +16,7 @@ import ProfilePage from './ProfilePage';
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <div>
         {/* Navigation Links */}
@@ -22,7 +24,7 @@ function App() {
 
         {/* Route Configuration */}
         <Routes>
-          <Route path="/" element={<HomePage />} exact />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/business-plan" element={<BusinessPlanPage />} />
@@ -34,6 +36,7 @@ function App() {
       </div>
       
     </Router>
+    </AuthProvider>
   );
 }
 

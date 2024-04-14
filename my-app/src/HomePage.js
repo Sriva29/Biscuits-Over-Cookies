@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap'; //Removed ProgressBar
 
 function HomePage() {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  const userName = location.state?.name;
 
   // Handler for changing the input field
   const handleInputChange = (event) => {
@@ -31,12 +33,11 @@ function HomePage() {
         <Row>
           <Col md={7} className="d-flex align-items-center justify-content-center">
             <div>
-              <h1>Welcome to TradeInsight</h1>
+              {userName && <h1>Welcome to TradeX, {userName} </h1>}
               <p>
-                Your essential partner for import and export success in Canada.
+                Your essential partner for import success in Canada.
                 Generate a winning business plan and unlock the potential of
-                international trade. Just enter a product you want to import or
-                export and get started.
+                international trade. Just enter a product you want to import and get started.
               </p>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -3,10 +3,13 @@ import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { PDFViewer, BlobProvider} from '@react-pdf/renderer';
 import BusinessPlanPDF from './BusinessPlanPDF';
+import { useAuth } from './AuthContext';
 
 
 const BusinessPlanPage = () => {
+  const { user } = useAuth();
   const [businessPlan, setBusinessPlan] = useState('');
+  const [isSaved, setIsSaved] = useState(false); 
   const location = useLocation();
   const { searchTerm } = location.state || {}; // Accessing searchTerm passed as state
 
@@ -59,6 +62,32 @@ const BusinessPlanPage = () => {
     }
   };
   
+  const saveBusinessPlan = async (blob, bestOption) => {
+    if (isSaved) return; 
+    try {
+      setIsSaved(true);
+      const userId = user?.userId;
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = async () => {
+        const base64data = reader.result;
+        const response = await axios.post('http://localhost:5000/api/business-plans', {
+          pdfData: base64data,
+          userId: userId,
+          description: 'Business Plan for Importing Commodities'
+          // description: `Business Plan for ${bestOption.commodity} from ${bestOption.country}`,
+        });
+  
+        console.log('Saved Business Plan:', response.data);
+      };
+    } catch (error) {
+      console.error('Error saving business plan:', error);
+    }
+  };
+  
+
+  
+
   return (
     <div>
       <h1>View Business Plan</h1>
@@ -73,6 +102,10 @@ const BusinessPlanPage = () => {
       if (error) {
         console.error(error);
         return <div>Failed to generate document</div>;
+      }
+      if (!loading && blob) {
+        // Call saveBusinessPlan function
+        saveBusinessPlan(blob);
       }
       return <a href={url} download="BusinessPlan.pdf">Download Business Plan</a>;
     }}

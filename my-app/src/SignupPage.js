@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button, Form, FloatingLabel } from 'react-bootstrap';
 import axios from 'axios';
 
 const SignupPage = () => {
+  const navigate = useNavigate(); 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the form from causing a page reload
+    e.preventDefault();
 
     try {
-      // Replace the URL with your actual backend endpoint
       const response = await axios.post('http://localhost:5000/api/signup', {
         fullName,
         email,
         password,
       });
 
-      console.log(response.data); // Handle response data as needed
-      alert('Signup successful!'); // Notify the user
-      // Redirect the user to login page or dashboard as necessary
+      console.log(response.data); 
+      navigate('/', { state: { name: fullName } });
     } catch (error) {
       console.error('Signup error:', error);
       alert('Failed to sign up.');

@@ -5,7 +5,7 @@ function Footer() {
         <div className="row">
           {/* Site Name & Tagline */}
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5>TradeInsight</h5>
+            <h5>TradeX</h5>
             <p>
               Generate a winning business plan and unlock the potential of international trade.
             </p>
@@ -31,7 +31,7 @@ function Footer() {
             <h5>Contact Us</h5>
             <p>
               Phone: +123456789<br />
-              Email: info@tradeinsight.com
+              Email: info@tradex.com
             </p>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Footer() {
         {/* <a className="text-white me-4" href="#!">Terms and Conditions</a>
         <a className="text-white me-4" href="#!">Privacy Policy</a> */}
         {/* <br /> */}
-        © {new Date().getFullYear()} TradeInsight: All rights reserved.
+        © {new Date().getFullYear()} TradeX: All rights reserved.
       </div>
     </footer>
   );
