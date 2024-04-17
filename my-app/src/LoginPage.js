@@ -31,16 +31,18 @@ const LoginPage = () => {
     <Container fluid>
       <Row>
         {/* Image */}
-        <Col md={5} className="p-0">
+        <Col md={6} className="p-0">
           <img
             src="https://i.imgur.com/Rp5OuNh.png"
             alt="Login"
             className="img-fluid float-start d-none d-md-block"
+            style={{ height: "100vh", objectFit: "cover", width: "100%" }}
           />
         </Col>
         <Col
-          md={7}
+          md={6}
           className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
         >
           <div style={{ maxWidth: "300px" }}>
             {/* Login */}
